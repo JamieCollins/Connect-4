@@ -16,6 +16,7 @@ game_grid = [[". ", ". ", ". ", ". ", ". ", ". ", ". "],
             [". ", ". ", ". ", ". ", ". ", ". ", ". "],
             [". ", ". ", ". ", ". ", ". ", ". ", ". "],]
 
+rows = 5
 
 def create_game_board():
     """
@@ -38,8 +39,7 @@ def verify_token_placement():
     """
     Verifies the placement of the tokens on the board.
     """
-    rows = 5
-
+    global rows
     if game_grid[rows][col] == "O":
         rows = rows - 1
         game_grid[rows][col] = "O"
