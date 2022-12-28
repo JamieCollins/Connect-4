@@ -9,12 +9,12 @@
 #           print()
 
 
-game_grid = [[". ", ". ", ". ", ". ", ". ", ". ", ". "],
-            [". ", ". ", ". ", ". ", ". ", ". ", ". "],
-            [". ", ". ", ". ", ". ", ". ", ". ", ". "],
-            [". ", ". ", ". ", ". ", ". ", ". ", ". "],
-            [". ", ". ", ". ", ". ", ". ", ". ", ". "],
-            [". ", ". ", ". ", ". ", ". ", ". ", ". "],]
+game_grid = [[".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],]
 
 rows = 5
 
@@ -35,20 +35,29 @@ def player_guess():
     verify_token_placement()
 
 
+def reset_row_counter():
+    """
+    Resets row counter for token placements.
+    """
+
+
 def verify_token_placement():
     """
     Verifies the placement of the tokens on the board.
     """
     global rows
-    if game_grid[rows][col] == "O":
+    if game_grid[rows][col] == ".":
+        game_grid[rows][col] = "O"
+        create_game_board()
+        player_guess()
+    elif game_grid[rows][col] != ".":
         rows = rows - 1
         game_grid[rows][col] = "O"
         create_game_board()
         player_guess()
     else:
-        game_grid[rows][col] = "O"
-        create_game_board()
-        player_guess()
+        print("ERROR")
+    
 
 
 def game_start():
