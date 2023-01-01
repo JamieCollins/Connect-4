@@ -98,11 +98,24 @@ def player_2_guess():
         print("ERROR")
 
 
+def game_fin():
+    """
+    Checks to see if either player has ammassed 4 tokens either
+    horizontally, vertically or diagonally.
+    """
+    for col in range(6):
+        for rows in range(5):
+            if game_grid[rows][col] == "O" and game_grid[rows + 1][col] == "O":
+                print("Congratulations, you won!")
+
+
+
 def game_start():
     """
     Initialises game turn. If number is odd, player chooses a row to drop token,
     if even it is the cpu's turn.
     """
+    game_fin()
     global turn
     turn = turn + 1
     if turn % 2 == 0:
