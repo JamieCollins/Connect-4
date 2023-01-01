@@ -50,9 +50,24 @@ def verify_token_placement():
         game_grid[rows][col] = "O"
         create_game_board()
         player_guess()
-    elif game_grid[rows][col] != ".":
-        rows = rows - 1
-        game_grid[rows][col] = "O"
+    elif game_grid[rows - 1][col] == ".":
+        game_grid[rows - 1][col] = "O"
+        create_game_board()
+        player_guess()
+    elif game_grid[rows - 2][col] == ".":
+        game_grid[rows - 2][col] = "O"
+        create_game_board()
+        player_guess()
+    elif game_grid[rows - 3][col] == ".":
+        game_grid[rows - 3][col] = "O"
+        create_game_board()
+        player_guess()
+    elif game_grid[rows - 4][col] == ".":
+        game_grid[rows - 4][col] = "O"
+        create_game_board()
+        player_guess()
+    elif game_grid[rows - 5][col] == ".":
+        game_grid[rows - 5][col] = "O"
         create_game_board()
         player_guess()
     else:
