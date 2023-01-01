@@ -1,13 +1,3 @@
-#def create_game_board():
-#   """
-#   Creates a table of 6 rows and 7 columns to be used as the game board.
-#   """
-#  for i in range(rows):
-#          for j in range(cols):
-#               print(". ", end="")
-#
-#           print()
-
 from random import randint
 
 game_grid = [[".", ".", ".", ".", ".", ".", "."],
@@ -31,7 +21,8 @@ def create_game_board():
 
 def player_guess():
     """
-    Asks user to choose a column on the grid in which to drop a token.
+    Asks user to choose a column on the grid in which to drop a token,
+    - 1 is taken from selection for indexing purposes.
     """
     global col
     col = (int(input("Please enter a number between 1 and 7: ")) - 1)
@@ -40,7 +31,7 @@ def player_guess():
 
 def verify_token_placement():
     """
-    Verifies the placement of the tokens on the board.
+    Verifies the placement of the tokens on the board for the player.
     """
     global rows
     if game_grid[rows][col] == ".":
@@ -73,8 +64,10 @@ def verify_token_placement():
 
 def player_2_guess():
     """
-    Verifies the placement of the tokens on the board.
+    Verifies the placement of the tokens on the board for the cpu,
+    randint is used to choose a random row.
     """
+    print("\n")
     global rows
     col = randint(0, 6)
     if game_grid[rows][col] == ".":
@@ -106,6 +99,10 @@ def player_2_guess():
 
 
 def game_start():
+    """
+    Initialises game turn. If number is odd, player chooses a row to drop token,
+    if even it is the cpu's turn.
+    """
     global turn
     turn = turn + 1
     if turn % 2 == 0:
