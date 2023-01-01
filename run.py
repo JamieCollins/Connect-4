@@ -31,14 +31,8 @@ def player_guess():
     Asks user to choose a column on the grid in which to drop a token.
     """
     global col
-    col = int(input("Please enter a number between 0 and 6: "))
+    col = (int(input("Please enter a number between 1 and 7: ")) - 1)
     verify_token_placement()
-
-
-def reset_row_counter():
-    """
-    Resets row counter for token placements.
-    """
 
 
 def verify_token_placement():
