@@ -106,8 +106,8 @@ def game_start():
     global turn
     turn = turn + 1
     if turn % 2 == 0:
-        player_2_guess()
-    else:
         player_guess()
+    else:
+        player_2_guess()
 
 game_start()
