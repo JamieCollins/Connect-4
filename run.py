@@ -8,6 +8,7 @@
 #
 #           print()
 
+from random import randint
 
 game_grid = [[".", ".", ".", ".", ".", ".", "."],
             [".", ".", ".", ".", ".", ".", "."],
@@ -17,6 +18,8 @@ game_grid = [[".", ".", ".", ".", ".", ".", "."],
             [".", ".", ".", ".", ".", ".", "."],]
 
 rows = 5
+turn = 0
+
 
 def create_game_board():
     """
@@ -43,33 +46,71 @@ def verify_token_placement():
     if game_grid[rows][col] == ".":
         game_grid[rows][col] = "O"
         create_game_board()
-        player_guess()
+        game_start()
     elif game_grid[rows - 1][col] == ".":
         game_grid[rows - 1][col] = "O"
         create_game_board()
-        player_guess()
+        game_start()
     elif game_grid[rows - 2][col] == ".":
         game_grid[rows - 2][col] = "O"
         create_game_board()
-        player_guess()
+        game_start()
     elif game_grid[rows - 3][col] == ".":
         game_grid[rows - 3][col] = "O"
         create_game_board()
-        player_guess()
+        game_start()
     elif game_grid[rows - 4][col] == ".":
         game_grid[rows - 4][col] = "O"
         create_game_board()
-        player_guess()
+        game_start()
     elif game_grid[rows - 5][col] == ".":
         game_grid[rows - 5][col] = "O"
         create_game_board()
-        player_guess()
+        game_start()
     else:
         print("ERROR")
     
 
+def player_2_guess():
+    """
+    Verifies the placement of the tokens on the board.
+    """
+    global rows
+    col = randint(0, 6)
+    if game_grid[rows][col] == ".":
+        game_grid[rows][col] = "X"
+        create_game_board()
+        game_start()
+    elif game_grid[rows - 1][col] == ".":
+        game_grid[rows - 1][col] = "X"
+        create_game_board()
+        game_start()
+    elif game_grid[rows - 2][col] == ".":
+        game_grid[rows - 2][col] = "X"
+        create_game_board()
+        game_start()
+    elif game_grid[rows - 3][col] == ".":
+        game_grid[rows - 3][col] = "X"
+        create_game_board()
+        game_start()
+    elif game_grid[rows - 4][col] == ".":
+        game_grid[rows - 4][col] = "X"
+        create_game_board()
+        game_start()
+    elif game_grid[rows - 5][col] == ".":
+        game_grid[rows - 5][col] = "X"
+        create_game_board()
+        game_start()
+    else:
+        print("ERROR")
+
 
 def game_start():
-    player_guess()
+    global turn
+    turn = turn + 1
+    if turn % 2 == 0:
+        player_2_guess()
+    else:
+        player_guess()
 
 game_start()
