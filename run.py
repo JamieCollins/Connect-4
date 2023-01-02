@@ -201,4 +201,26 @@ def game_start():
     else:
         verify_ai_placement()
 
-game_start()
+
+def game_intro():
+    """
+    Explains the game rules to the user and then initialises the game loop.
+    """
+    print("This is a game of Connect 4.")
+    print("There are 7 columns and 6 rows on a board.")
+    print("Drop a token into the board by choosing a column.")
+    print("The token will drop to the bottom row of the board.")
+    print("Unless already taken by another token, it will take the lowest\
+ available space on the board.")
+    print("Win the game by connecting 4 adjacent tokens\
+ either vertically, horizontally or diagonally, before\
+ your opponent.")
+    print("Your tokens will be symbolised by an 'O'.")
+    print("your opponents tokens will symbolised by an 'X'.")
+    print("Available space on the board is symbolised by '.'")
+    print("Your opponent will make the first move.")
+    print("Good luck!")
+    game_start()
+
+
+game_intro()
