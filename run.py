@@ -115,6 +115,11 @@ def game_fin():
                     and game_grid[rows][col - 2] == "O"
                         and game_grid[rows][col - 3] == "O"):
                             print("Congratulations, you won horizontally!")
+            elif (game_grid[rows][col] == "O"
+                and game_grid[rows - 1][col - 1] == "O"
+                    and game_grid[rows - 2][col - 2] == "O"
+                        and game_grid[rows - 3][col - 3] == "O"):
+                            print("Congratulations, you won diagonally!")
 
 
 
