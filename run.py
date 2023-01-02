@@ -21,7 +21,7 @@ def create_game_board():
         print(*i)
 
 
-def player_guess():
+def user_col_guess():
     """
     Asks user to choose a column on the grid in which to drop a token,
     - 1 is taken from selection for indexing purposes.
@@ -30,12 +30,12 @@ def player_guess():
     global col
     col = (int(input
             ("Choose a row by entering a number between 1 and 7: ")) - 1)
-    verify_token_placement()
+    verify_user_placement()
 
 
-def verify_token_placement():
+def verify_user_placement():
     """
-    Verifies the placement of the tokens on the board for the player.
+    Verifies the placement of the tokens on the board for the user.
     """
     global rows
     if game_grid[rows][col] == ".":
@@ -66,7 +66,7 @@ def verify_token_placement():
         print("ERROR")
 
 
-def player_2_guess():
+def verify_ai_placement():
     """
     Verifies the placement of the tokens on the board for the ai,
     randint is used to choose a random row.
@@ -102,7 +102,7 @@ def player_2_guess():
         print("ERROR")
 
 
-def game_fin():
+def game_fin_user():
     """
     Checks to see if user player has ammassed 4 tokens either
     horizontally, vertically or diagonally.
@@ -158,9 +158,10 @@ def game_fin_ai():
 
 def end_game():
     """
-    Ends game if either users matches 4 tokens.
+    Ends game if either users matches 4 tokens. Asks if user would
+    like to replay and resets grid if so.
     """
-    if game_fin() or game_fin_ai() == True:
+    if game_fin_user() or game_fin_ai() == True:
         print("Game Over")
         user_replay_input = (input("Would you like to play again? (y/n): "))
         if user_replay_input == "y":
@@ -176,6 +177,7 @@ def end_game():
             print("Goodbye!")
         else:
             print("please type 'y' or 'n':")
+            user_replay_input = (input("Would you like to play again? (y/n): "))
     else:
         game_start()
 
@@ -188,8 +190,8 @@ def game_start():
     global turn
     turn = turn + 1
     if turn % 2 == 0:
-        player_guess()
+        user_col_guess()
     else:
-        player_2_guess()
+        verify_ai_placement()
 
 game_start()
