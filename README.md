@@ -50,6 +50,8 @@ I am aware of this issue and tried my best to troubleshoot before deadline but u
 * The ability to track statistics such as games won, turns taken to win etc.
 * Allow players to increase grid size, amount of tokens that need to be connected, choose token symbols.
 * Create classes in the code which would remove repeated functions for user and AI.
+* The grid could be labelled so that it is easier for the user to pick which column and row they would like to place their token.
+* The AI's most recent move can be highlighted to make it easier to see where there last token was placed.
 
 
 ## Testing
