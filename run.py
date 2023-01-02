@@ -131,7 +131,7 @@ def game_fin_user():
     for col in range(7):
         for rows in range(6):
             if (game_grid[rows][col] == "O"
-                    and game_grid[rows - 1][col - 1] == "O"
+                and game_grid[rows - 1][col - 1] == "O"
                     and game_grid[rows - 2][col - 2] == "O"
                     and game_grid[rows - 3][col - 3] == "O"):
                 create_game_board()
@@ -164,7 +164,7 @@ def game_fin_ai():
     for col in range(7):
         for rows in range(6):
             if (game_grid[rows][col] == "X"
-                    and game_grid[rows - 1][col - 1] == "X"
+                and game_grid[rows - 1][col - 1] == "X"
                     and game_grid[rows - 2][col - 2] == "X"
                     and game_grid[rows - 3][col - 3] == "X"):
                 create_game_board()
