@@ -22,9 +22,14 @@ The AI opponent will make the first move.
 ## Features
 
 * The game has the AI randomly select a token in which to drop a token.
-* A function checks to verify the available space on the game board.
+* A function checks to verify the available space on the game board and drops token to lowest available spot or selected column.
 * User feedback is given through the game.
 * Incorrect user input will be rejected and the user will be given further feedback. You must only enter numbers between 1 and 7.
+* Feedback is given upon completion of the game.
+* The ability to restart the game is given at the end of a game and prompts for user feedback.
+* If the user chooses to restart the game, the game board is reset and the game loop starts over.
+
+![Game Issue](images/end-game-feedback.png)
 
 
 ## Issues/ Bugs
