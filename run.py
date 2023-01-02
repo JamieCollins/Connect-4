@@ -229,7 +229,7 @@ def game_intro():
  your opponent.")
     print("Your tokens will be symbolised by an 'O'.")
     print("your opponents tokens will symbolised by an 'X'.")
-    print("Available space on the board is symbolised by '.'")
+    print("Available space on the board is symbolised by '.'.")
     print("Your opponent will make the first move.")
     print("Good luck!")
     game_start()

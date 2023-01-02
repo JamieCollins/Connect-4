@@ -1,31 +1,65 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Connect-4
 
-Welcome JamieCollins,
+This is a simple connect 4 game that pits the user against AI in a battle to connect 4 tokens either horizontally, vertically or diagonally. The game is programmed entirely of vanilla Python code and runs entirely in the terminal. 
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+![Game Screenshot](images/connect-4-intro.png)
 
-## Reminders
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## How To Play
 
-## Creating the Heroku app
+There are 7 columns and 6 rows on a board.
+Each player drops a token into the board by choosing a column.
+The token will drop to the bottom row of the board.
+Unless already taken by another token, it will take the lowest available space on the board.
+Win the game by connecting 4 adjacent tokens either vertically, horizontally or diagonally, before the opponent.
+The user player's tokens will be symbolised by an 'O'.
+The opponents tokens will symbolised by an 'X'.
+The opponent is currently played by a simple AI that chooses random rows.
+Available space on the board is symbolised by '.'.
+The AI opponent will make the first move.
+    
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features
 
-1. `heroku/python`
-2. `heroku/nodejs`
+* The game has the AI randomly select a token in which to drop a token.
+* A function checks to verify the available space on the game board.
+* User feedback is given through the game.
+* Incorrect user input will be rejected and the user will be given further feedback. You must only enter numbers between 1 and 7.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Issues/ Bugs
 
-Connect your GitHub repository and deploy as normal.
+* There are instances currently where the game is won by either side when not connecting four tokens directly in a row, as the game grid edges are not bound.
 
-## Constraints
+Example: if row 2 has columns 1,2,3 and 7 with the same token it currently counts as a win, as shown in the below image.
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+![Game Issue](images/win-issue.png)
 
------
-Happy coding!
+I am aware of this issue and tried my best to troubleshoot before deadline but unfortunately did not have enough time to do so.
+
+
+## Future Features
+
+* The ability for the game to be played by two users instead of against AI.
+* Update to the algorithm for the AI to increase difficulty as it currently chooses a random row.
+* The ability to track statistics such as games won, turns taken to win etc.
+* Allow players to increase grid size, amount of tokens that need to be connected, choose token symbols.
+* Create classes in the code which would remove repeated functions for user and AI.
+
+
+## Testing
+
+* The code passed through the Code Institute Python Linter with just one error, which is caused by the use of Try, Except - to be fixed in future.
+* The game is working as intended bar the one issue which is highlighted in the above section.
+
+
+## Deployment
+
+* This project was deployed using Code Institue's Python project template on Github.
+* The application was deployed using Heroku by linking to the GitHub repository.
+* Heroku buildpacks used are Python and NodeJS.
+* Config Vars used were "PORT" = "8000"
+
+
+## Author
+* All code was written by me, Jamie Collins Maher with no code copied directly from elsewhere.
