@@ -44,7 +44,7 @@ def user_col_guess_verify():
         else:
             print("That is not a number between 1 and 7.")
             user_col_guess_verify()
-    except: 
+    except:
         print("That is not a valid number between 1 and 7.")
         user_col_guess_verify()
 
@@ -73,7 +73,7 @@ def verify_user_placement():
         game_grid[rows - 5][col] = "O"
         end_game()
     else:
-        print("ERROR")
+        print("Error, you chose a column that is already full.")
 
 
 def verify_ai_placement():
@@ -103,7 +103,7 @@ def verify_ai_placement():
         game_grid[rows - 5][col] = "X"
         end_game()
     else:
-        print("ERROR")
+        verify_ai_placement()
 
 
 def game_fin_user():
