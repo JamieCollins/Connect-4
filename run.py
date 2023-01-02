@@ -1,11 +1,13 @@
 from random import randint
 
+
 game_grid = [[".", ".", ".", ".", ".", ".", "."],
             [".", ".", ".", ".", ".", ".", "."],
             [".", ".", ".", ".", ".", ".", "."],
             [".", ".", ".", ".", ".", ".", "."],
             [".", ".", ".", ".", ".", ".", "."],
             [".", ".", ".", ".", ".", ".", "."],]
+
 
 rows = 5
 turn = 0
@@ -62,7 +64,7 @@ def verify_token_placement():
         end_game()
     else:
         print("ERROR")
-    
+
 
 def player_2_guess():
     """
@@ -160,6 +162,20 @@ def end_game():
     """
     if game_fin() or game_fin_ai() == True:
         print("Game Over")
+        user_replay_input = (input("Would you like to play again? (y/n): "))
+        if user_replay_input == "y":
+            global game_grid
+            game_grid = [[".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],
+            [".", ".", ".", ".", ".", ".", "."],]
+            game_start()
+        elif user_replay_input == "n":
+            print("Goodbye!")
+        else:
+            print("please type 'y' or 'n':")
     else:
         game_start()
 
