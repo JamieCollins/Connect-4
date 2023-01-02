@@ -163,24 +163,31 @@ def end_game():
     """
     if game_fin_user() or game_fin_ai() == True:
         print("Game Over")
-        user_replay_input = (input("Would you like to play again? (y/n): "))
-        if user_replay_input == "y":
-            global game_grid
-            game_grid = [[".", ".", ".", ".", ".", ".", "."],
-            [".", ".", ".", ".", ".", ".", "."],
-            [".", ".", ".", ".", ".", ".", "."],
-            [".", ".", ".", ".", ".", ".", "."],
-            [".", ".", ".", ".", ".", ".", "."],
-            [".", ".", ".", ".", ".", ".", "."],]
-            game_start()
-        elif user_replay_input == "n":
-            print("Goodbye!")
-        else:
-            print("please type 'y' or 'n':")
-            user_replay_input = (input("Would you like to play again? (y/n): "))
+        restart_game()
     else:
         game_start()
 
+def restart_game():
+    """
+    Asks for user input at the end of the game if they would like to
+    play again, if so resets game and grid.
+    Resets loop if user enters incorrectly.
+    """
+    user_replay_input = (input("Would you like to play again? (y/n): "))
+    if user_replay_input.lower() == "y":
+        global game_grid
+        game_grid = [[".", ".", ".", ".", ".", ".", "."],
+        [".", ".", ".", ".", ".", ".", "."],
+        [".", ".", ".", ".", ".", ".", "."],
+        [".", ".", ".", ".", ".", ".", "."],
+        [".", ".", ".", ".", ".", ".", "."],
+        [".", ".", ".", ".", ".", ".", "."],]
+        game_start()
+    elif user_replay_input.lower() == "n":
+        print("Goodbye, thanks for playing!")
+    else:
+        print("please type 'y' or 'n':")
+        restart_game()
 
 def game_start():
     """
