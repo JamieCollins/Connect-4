@@ -28,10 +28,21 @@ def user_col_guess():
     """
     create_game_board()
     print("\nYour opponent just placed a token, it's now your turn:")
+    user_col_guess_verify()
+
+
+def user_col_guess_verify():
+    """
+    Verifies user input is between 1 and 7.
+    """   
     global col
     col = (int(input
             ("Choose a row by entering a number between 1 and 7: ")) - 1)
-    verify_user_placement()
+    if col >= 0 and col <= 6:
+        verify_user_placement()
+    else:
+        print("That is not a number between 1 and 7.")
+        user_col_guess_verify()
 
 
 def verify_user_placement():
