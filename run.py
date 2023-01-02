@@ -26,6 +26,7 @@ def user_col_guess():
     Asks user to choose a column on the grid in which to drop a token,
     - 1 is taken from selection for indexing purposes.
     """
+    create_game_board()
     print("\nYour opponent just placed a token, it's now your turn:")
     global col
     col = (int(input
@@ -40,27 +41,21 @@ def verify_user_placement():
     global rows
     if game_grid[rows][col] == ".":
         game_grid[rows][col] = "O"
-        create_game_board()
         end_game()
     elif game_grid[rows - 1][col] == ".":
         game_grid[rows - 1][col] = "O"
-        create_game_board()
         end_game()
     elif game_grid[rows - 2][col] == ".":
         game_grid[rows - 2][col] = "O"
-        create_game_board()
         end_game()
     elif game_grid[rows - 3][col] == ".":
         game_grid[rows - 3][col] = "O"
-        create_game_board()
         end_game()
     elif game_grid[rows - 4][col] == ".":
         game_grid[rows - 4][col] = "O"
-        create_game_board()
         end_game()
     elif game_grid[rows - 5][col] == ".":
         game_grid[rows - 5][col] = "O"
-        create_game_board()
         end_game()
     else:
         print("ERROR")
@@ -76,27 +71,21 @@ def verify_ai_placement():
     col = randint(0, 6)
     if game_grid[rows][col] == ".":
         game_grid[rows][col] = "X"
-        create_game_board()
         end_game()
     elif game_grid[rows - 1][col] == ".":
         game_grid[rows - 1][col] = "X"
-        create_game_board()
         end_game()
     elif game_grid[rows - 2][col] == ".":
         game_grid[rows - 2][col] = "X"
-        create_game_board()
         end_game()
     elif game_grid[rows - 3][col] == ".":
         game_grid[rows - 3][col] = "X"
-        create_game_board()
         end_game()
     elif game_grid[rows - 4][col] == ".":
         game_grid[rows - 4][col] = "X"
-        create_game_board()
         end_game()
     elif game_grid[rows - 5][col] == ".":
         game_grid[rows - 5][col] = "X"
-        create_game_board()
         end_game()
     else:
         print("ERROR")
@@ -113,18 +102,21 @@ def game_fin_user():
                 and game_grid[rows - 1][col] == "O"
                     and game_grid[rows - 2][col] == "O"
                         and game_grid[rows - 3][col] == "O"):
+                            create_game_board()
                             print("Congratulations, you won vertically!")
                             return True
             elif (game_grid[rows][col] == "O"
                 and game_grid[rows][col - 1] == "O"
                     and game_grid[rows][col - 2] == "O"
                         and game_grid[rows][col - 3] == "O"):
+                            create_game_board()
                             print("Congratulations, you won horizontally!")
                             return True
             elif (game_grid[rows][col] == "O"
                 and game_grid[rows - 1][col - 1] == "O"
                     and game_grid[rows - 2][col - 2] == "O"
                         and game_grid[rows - 3][col - 3] == "O"):
+                            create_game_board()
                             print("Congratulations, you won diagonally!")
                             return True
 
@@ -140,18 +132,21 @@ def game_fin_ai():
                 and game_grid[rows - 1][col] == "X"
                     and game_grid[rows - 2][col] == "X"
                         and game_grid[rows - 3][col] == "X"):
+                            create_game_board()
                             print("Unfortunately you lost!")
                             return True
             elif (game_grid[rows][col] == "X"
                 and game_grid[rows][col - 1] == "X"
                     and game_grid[rows][col - 2] == "X"
                         and game_grid[rows][col - 3] == "X"):
+                            create_game_board()
                             print("Unfortunately you lost!")
                             return True
             elif (game_grid[rows][col] == "O"
                 and game_grid[rows - 1][col - 1] == "X"
                     and game_grid[rows - 2][col - 2] == "X"
                         and game_grid[rows - 3][col - 3] == "X"):
+                            create_game_board()
                             print("Unfortunately you lost!")
                             return True
 
