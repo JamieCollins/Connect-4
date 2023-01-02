@@ -120,21 +120,23 @@ def game_fin_user():
                 create_game_board()
                 print("Congratulations, you won vertically!")
                 return True
-            elif (game_grid[rows][col] == "O"
-                    and game_grid[rows][col - 1] == "O"
-                    and game_grid[rows][col - 2] == "O"
-                    and game_grid[rows][col - 3] == "O"):
+
+    for row in game_grid:
+        for i in range(4):
+            if row[i:i+4] == ["O", "O", "O", "O"]:
                 create_game_board()
                 print("Congratulations, you won horizontally!")
                 return True
-            elif (game_grid[rows][col] == "O"
+    
+    for col in range(7):
+        for rows in range(6):
+            if (game_grid[rows][col] == "O"
                     and game_grid[rows - 1][col - 1] == "O"
                     and game_grid[rows - 2][col - 2] == "O"
                     and game_grid[rows - 3][col - 3] == "O"):
                 create_game_board()
                 print("Congratulations, you won diagonally!")
                 return True
-
 
 def game_fin_ai():
     """
@@ -150,14 +152,17 @@ def game_fin_ai():
                 create_game_board()
                 print("Unfortunately you lost!")
                 return True
-            elif (game_grid[rows][col] == "X"
-                    and game_grid[rows][col - 1] == "X"
-                    and game_grid[rows][col - 2] == "X"
-                    and game_grid[rows][col - 3] == "X"):
+
+    for row in game_grid:
+        for i in range(4):
+            if row[i:i+4] == ["X", "X", "X", "X"]:
                 create_game_board()
                 print("Unfortunately you lost!")
                 return True
-            elif (game_grid[rows][col] == "O"
+
+    for col in range(7):
+        for rows in range(6):
+            if (game_grid[rows][col] == "X"
                     and game_grid[rows - 1][col - 1] == "X"
                     and game_grid[rows - 2][col - 2] == "X"
                     and game_grid[rows - 3][col - 3] == "X"):
