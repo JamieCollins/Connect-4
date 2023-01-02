@@ -103,10 +103,12 @@ def game_fin():
     Checks to see if either player has ammassed 4 tokens either
     horizontally, vertically or diagonally.
     """
-    for col in range(6):
-        for rows in range(5):
-            if game_grid[rows][col] == "O" and game_grid[rows + 1][col] == "O":
-                print("Congratulations, you won!")
+    for col in range(7):
+        for rows in range(6):
+            if (game_grid[rows][col] == "O" and game_grid[rows - 1][col] == "O"
+                and game_grid[rows - 2][col] == "O"
+                    and game_grid[rows - 3][col] == "O"):
+                        print("Congratulations, you won!")
 
 
 
