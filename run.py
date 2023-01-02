@@ -127,7 +127,7 @@ def game_fin_user():
                 create_game_board()
                 print("Congratulations, you won horizontally!")
                 return True
-    
+
     for col in range(7):
         for rows in range(6):
             if (game_grid[rows][col] == "O"
@@ -137,6 +137,7 @@ def game_fin_user():
                 create_game_board()
                 print("Congratulations, you won diagonally!")
                 return True
+
 
 def game_fin_ai():
     """
