@@ -24,8 +24,10 @@ def player_guess():
     Asks user to choose a column on the grid in which to drop a token,
     - 1 is taken from selection for indexing purposes.
     """
+    print("\nYour opponent just placed a token, it's now your turn:")
     global col
-    col = (int(input("Please enter a number between 1 and 7: ")) - 1)
+    col = (int(input
+            ("Choose a row by entering a number between 1 and 7: ")) - 1)
     verify_token_placement()
 
 
