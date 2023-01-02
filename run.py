@@ -105,10 +105,16 @@ def game_fin():
     """
     for col in range(7):
         for rows in range(6):
-            if (game_grid[rows][col] == "O" and game_grid[rows - 1][col] == "O"
-                and game_grid[rows - 2][col] == "O"
-                    and game_grid[rows - 3][col] == "O"):
-                        print("Congratulations, you won!")
+            if (game_grid[rows][col] == "O"
+                and game_grid[rows - 1][col] == "O"
+                    and game_grid[rows - 2][col] == "O"
+                        and game_grid[rows - 3][col] == "O"):
+                            print("Congratulations, you won vertically!")
+            elif (game_grid[rows][col] == "O"
+                and game_grid[rows][col - 1] == "O"
+                    and game_grid[rows][col - 2] == "O"
+                        and game_grid[rows][col - 3] == "O"):
+                            print("Congratulations, you won horizontally!")
 
 
 
